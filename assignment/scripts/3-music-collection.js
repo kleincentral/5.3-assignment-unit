@@ -1,12 +1,45 @@
 console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
 
+myCollection=[];
 
+function addToCollection(collection, title, artist, yearPublished) {
+  const recordObject = {
+    title: title,
+    artist: artist,
+    yearPublished: yearPublished
+  };
+  collection.push(recordObject)
+  return recordObject;
+}
 
+console.log(addToCollection(myCollection, '1000 shades of gray', 'John Smith', 1996))
+console.log(addToCollection(myCollection, 'Most Boring Song', 'John Smith', 2000))
+console.log(addToCollection(myCollection, 'The Source of Unlimited Energy', 'Future Jim', 2031))
+console.log(addToCollection(myCollection, 'Wait These Aren\'t Books?', 'Confused Luke', 2023))
+console.log(addToCollection(myCollection, 'Piano Sonata No. 14', 'Ludwig Von Beethoven', 1801))
+console.log(addToCollection(myCollection, 'Until It Sleeps', 'Metallica', 1996))
+console.log(myCollection)
 
+function showCollection(collection) {
+  for(let i=0; i <= collection.length-1; i++) {
+    console.log(collection[i].title + ' by ' + collection[i].artist + ', published in ' + collection[i].yearPublished)
+  }
+}
 
+showCollection(myCollection)
 
+function findByArtist(collection, artist) {
+  allArtists = [];
+  for(let i=0; i <= collection.length-1; i++) {
+    if (collection[i].artist === artist) {
+      allArtists.push(collection[i]);
+    }
+  }
+  return allArtists
+}
 
+console.log(findByArtist(myCollection, 'Metallica'))
 
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
